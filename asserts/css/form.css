@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../images/Boy fight.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.box {
+  margin-bottom: 4rem;
+}
+.box form {
+  margin-top: 4rem;
+  padding: 20px 10px 20px 10px;
+  background: #222;
+  width: 30vw;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid #04aa6d;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  background-color: #3cbc8d;
+  color: white;
+}
+
+.submit{
+  display: flex;
+  justify-content: center;
+}
+
+
+input[type="submit"] {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3cbc8d;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  padding-block-end: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+
+.inputBox label{
+  color: #ffffff;
+}
+
+.links {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.links a {
+  color: #04aa6d;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #3cbc8d;
+}
+
+.links {
+ margin-block-start: 10px;
+  margin-block-end: 10px;
+  font-size: 1.2em;
+}
+.links > a {
+  text-decoration: none;
+  color: rgb(45, 45, 207);
+  transition: 0.5s;
+}
+.links > a:hover {
+  color: rgb(204, 24, 24);
+}
+.links > span {
+  color: whitesmoke;
+}
+
+
+.option {
+  background: rgb(45, 45, 207);
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px 5px 10px 5px;
+  margin-bottom: 10px;
+}
+.option a {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: white;
+}
+
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  margin-bottom: 15px;
+}
+
+.alert-danger {
+  color: white;
+}
+
+/*MAIN PAGE*/
