@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/Logo icon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <title>Box champy</title>
-</head>
-<body>
+<?php
+session_start();
+require_once "header.php";
+?>
+
+
     <div class="first">
            <div class="top-nav">
                 <div class="logo">
@@ -21,7 +17,15 @@
                     <a href="#">about</a>
                     <a href="#">location</a>
                     <a href="#">contact</a>
-                    <a class="sign-up" href="sign up.php">sign up</a>
+                    <?php
+
+                    if (isset($_SESSION['username'])) {
+                        echo '<a href="logout.php" title="'.$_SESSION['email'].'">logout</a>';
+                    } else {
+                        echo '<a class="sign-up"   href="login.php">Login</a>';
+                    }
+                    ?>
+                    
                 </div>
              </div>
             <div class="content">
@@ -55,7 +59,7 @@
                 <h2>HOW WE GOT STARTED<br>IN THIS BUSINESS</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, doloribus culpa. Doloremque maxime modi laudantium sit, commodi architecto perspiciatis. Fuga delectus deleniti earum atque culpa.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic explicabo quod animi sint! Molestias cumque minima quis nemo aliquam voluptatum.</p>
-                <a class="sign-up" href="sign up.php">sign up</a>
+                <a class="sign-up" href="signup.php">sign up</a>
              </div>         
         </div>
     </section>
