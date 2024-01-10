@@ -1,11 +1,14 @@
 <?php
 session_start();
+
+// Redirect to index.php if user is already logged in
 if (isset($_SESSION["user"])) {
     header("Location: index.php");
     exit();
 }
 
 require_once "connection.php";
+require_once "header.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
@@ -19,44 +22,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = mysqli_stmt_get_result($stmt);
     $user = mysqli_fetch_assoc($result);
 
-if ($user && $password === $user["password"]) {
+    if ($user && $password === $user["password"]) {
         $_SESSION["user"] = true;
         $_SESSION["email"] = $email;
         $_SESSION["username"] = $user["username"];
+
         header("Location: index.php");
         exit();
     } else {
         $error_message = "Invalid email or password.";
     }
 }
-
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<link rel="stylesheet" href="asserts/css/form.css">
 
-    <title>REGISTRATION FORM </title>
-    <link rel="stylesheet" href="style 1.css">
-</head>
-<body>
    <div class="box">
     <form action="login.php" method="post">
     <h2>login</h2>
             <div class="inputBox">
-                <input type="email" name="email" required>
-                <p>email</p>
+                <label>email</label>
+                <input type="email" name="email" placeholder="enter your email" required>
             </div>
             <div class="inputBox">
-                <input type="password" name="password" required>
-                <p>password</p>
+                <label>password</label>
+                <input type="password" name="password" placeholder="enter your password" required>
             </div>
             <div class="submit">
                 <input type="submit" name="login" value="login">
             </div>
-            <div class="option">
-                <a href="#">continue with google</a>
-            </div>
+
+            
             <div class="links">
         <span>Don't have an account?<br> </span><a href="signup.php">sign up here</a>
             </div>
